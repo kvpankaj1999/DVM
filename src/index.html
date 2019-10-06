@@ -11,7 +11,7 @@
   </head>
   <body>
     <div class="container" style="width: 650px;">
-      <div class="row">
+      <div class="row text-center" style="display:flex; flex-wrap:wrap;"></div>
         <div class="col-lg-12">
           <h1 class="text-center">Results</h1>
           <hr/>
@@ -20,26 +20,27 @@
             <p class="text-center">Please Wait...</p>
           </div>
           <div id="content" style="display: none;">
-            <table class="table">
-              <thead>
+            <div class="table" id="candidatesResults">
+              <!-- <thead>        <div class="row text-center" styl        <div class="row text-center" style="display:flex; flex-wrap:wrap;"></div>
+e="display:flex; flex-wrap:wrap;"></div>
+
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">Name</th>
-                  <th scope="col">Votes</th>
+                  <th scope="col">No. of Votes</th>
                 </tr>
-              </thead>
-              <tbody id="candidatesResult">
+              </thead> -->
+            </div>
               </tbody>
             </table>
             <hr/>
-            <form onSubmit="App.castVote(); return false;">
+            <form onSubmit="App.castVote(); return false;"></form>
               <div class="form-group">
                 <label for="candidatesElect">Select Candidate</label>
-                <select class="form-control" id="candidatesElect">
+                <select class="form-control" >
                 </select>
               </div>
               <button type="submit" class="btn btn-primary">Vote</button>
-              <hr />
             </form>
             <p id="accountNumber" class="text-center"></p>
           </div>
@@ -56,3 +57,12 @@
     <script src="js/app.js"></script>
   </body>
 </html>
+<div class="card">
+  <img class="img-fluid" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png">
+  <div class="card-body fix">
+      <h4 class="card-title">Candidate 2</h4>
+      <p><strong>Some example text.</strong></p>
+      <a href="#" class="btn btn-primary">Vote me</a>
+  </div>
+</div>
+</div>

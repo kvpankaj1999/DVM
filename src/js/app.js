@@ -57,9 +57,10 @@ App = {
 
     App.contracts.Election.deployed().then(function(instance) {
       electionInstance = instance;
-      return electionInstance.totalCandidates();
-    }).then(function(candidatesCount) {
-      var candidatesResult = $("#candidatesResult");
+      return electionInstance.totalCandidates(), electionInstance.Vote;
+    }).then(function(candidatesCount, Vote) {
+      //var candidatesResult = $("#candidatesResult");
+      var candidatesResult = $("#candidatesContainer");
       candidatesResult.empty();
       var candidatesElect = $('#candidatesElect');
       candidatesElect.empty();
@@ -69,12 +70,10 @@ App = {
           var id = candidate[0];
           var name = candidate[1];
           var votes = candidate[2];
-
-          var candidateTable = "<tr><th>" + id + "</th><td>" + name + "</td><td>" + votes + "</td></tr>"
+          //<form onSubmit="App.castVote();return false;"></form>
+          var candidateCard = "<tr><th>"  "</th><td>" + name + "</td><td>" + votes + "</td></tr>"
           candidatesResult.append(candidateTable);
-
-          var candidateSelection = "<option value='" + id + "' >" + name + "</ option>"
-          candidatesElect.append(candidateSelection);
+          var candidateSelection = candidatesElect.append(candidateSelection);
         });
       }
       return electionInstance.voters(App.account);
